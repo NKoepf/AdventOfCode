@@ -12,19 +12,19 @@ func main() {
 	part, _ := strconv.Atoi(os.Args[1])
 
 	if part == 1 {
-		part1()
+		Part1()
 	} else if part == 2 {
-		part2()
+		day1Part2()
 	} else {
 		fmt.Println("Wrong or missing input")
 	}
 
 }
 
-func part1() {
+func Part1() {
 	fmt.Println("Reading inputs of day 1:")
 
-	readFile, err := os.Open("inputs/day_1.txt")
+	readFile, err := os.Open("day_1.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -67,10 +67,10 @@ func part1() {
 	fmt.Printf("Highscore: %d from elve %d\n", highScoreCals, indexOfHighscore)
 }
 
-func part2() {
+func day1Part2() {
 	fmt.Println("Reading inputs of day 1:")
 
-	readFile, err := os.Open("inputs/day_1.txt")
+	readFile, err := os.Open("day_1.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
