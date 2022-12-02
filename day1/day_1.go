@@ -24,7 +24,7 @@ func main() {
 func Part1() {
 	fmt.Println("Reading inputs of day 1:")
 
-	readFile, err := os.Open("day_1.txt")
+	readFile, err := os.Open("day1/day_1.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -70,7 +70,7 @@ func Part1() {
 func day1Part2() {
 	fmt.Println("Reading inputs of day 1:")
 
-	readFile, err := os.Open("day_1.txt")
+	readFile, err := os.Open("day1/day_1.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
