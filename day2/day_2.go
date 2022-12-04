@@ -15,7 +15,7 @@ func main() {
 	if part == 1 {
 		Part1()
 	} else if part == 2 {
-		day2Part2()
+		Part2()
 	} else {
 		fmt.Println("Wrong or missing input")
 	}
@@ -44,7 +44,7 @@ func Part1() {
 
 }
 
-func day2Part2() {
+func Part2() {
 	readFile, err := os.Open("day2/input.txt")
 	if err != nil {
 		fmt.Println(err)
