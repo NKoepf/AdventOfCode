@@ -1,4 +1,4 @@
-package main
+package day1
 
 import (
 	"bufio"
@@ -14,7 +14,7 @@ func main() {
 	if part == 1 {
 		Part1()
 	} else if part == 2 {
-		day1Part2()
+		Part2()
 	} else {
 		fmt.Println("Wrong or missing input")
 	}
@@ -67,7 +67,7 @@ func Part1() {
 	fmt.Printf("Highscore: %d from elve %d\n", highScoreCals, indexOfHighscore)
 }
 
-func day1Part2() {
+func Part2() {
 	fmt.Println("Reading inputs of day 1:")
 
 	readFile, err := os.Open("day1/day_1.txt")
