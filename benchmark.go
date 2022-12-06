@@ -6,25 +6,38 @@ import (
 	"AdventOfCode_2022/day3"
 	"AdventOfCode_2022/day4"
 	"AdventOfCode_2022/day5"
+	"AdventOfCode_2022/day6"
 	"log"
 	"time"
 )
 
 func main() {
 
-	start := time.Now()
+	times := make([]time.Duration, 50)
+	for i := 0; i < 50; i++ {
 
-	day1.Part1()
-	day1.Part2()
-	day2.Part1()
-	day2.Part2()
-	day3.Part1()
-	day3.Part2()
-	day4.Part1()
-	day4.Part2()
-	day5.Part1()
-	day5.Part2()
+		start := time.Now()
+		day1.Part1()
+		day1.Part2()
+		day2.Part1()
+		day2.Part2()
+		day3.Part1()
+		day3.Part2()
+		day4.Part1()
+		day4.Part2()
+		day5.Part1()
+		day5.Part2()
+		day6.Part1()
+		day6.Part2()
+		elapsed := time.Since(start)
 
-	elapsed := time.Since(start)
-	log.Printf("All day took %s", elapsed)
+		times[i] = elapsed
+	}
+	var sumOfTimes int64
+	for _, val := range times {
+		sumOfTimes += val.Milliseconds()
+	}
+	sumOfTimes = sumOfTimes / 50
+
+	log.Printf("\n\n\nAverage time for all Days combined %d ms", sumOfTimes)
 }
