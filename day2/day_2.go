@@ -40,7 +40,7 @@ func Part1() {
 		totalScore += getScore(parts[0], parts[1])
 	}
 
-	fmt.Printf("total score of rock, paper, scissors: %d\n", totalScore)
+	fmt.Printf("D2P1: total score of rock, paper, scissors: %d\n", totalScore)
 
 }
 
@@ -62,7 +62,7 @@ func Part2() {
 		totalScore += getScoreForOutcome(parts[0], parts[1])
 	}
 
-	fmt.Printf("total score of rock, paper, scissors: %d\n", totalScore)
+	fmt.Printf("D2P2: total score of rock, paper, scissors: %d\n", totalScore)
 }
 
 /*

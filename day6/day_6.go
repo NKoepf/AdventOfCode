@@ -72,5 +72,11 @@ func findStart(sequenceLength int) {
 		}
 		index++
 	}
-	fmt.Printf("First letter to have %d individuals %d", sequenceLength, index)
+
+	if sequenceLength == 4 {
+		fmt.Print("D6P1: ")
+	} else {
+		fmt.Print("D6P2: ")
+	}
+	fmt.Printf("First letter to have %d individuals %d\n", sequenceLength, index)
 }

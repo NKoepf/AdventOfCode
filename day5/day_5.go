@@ -66,7 +66,6 @@ func Part1() {
 					}
 				}
 			}
-			fmt.Println()
 			lineIndex++
 		} else if !part1 {
 			regexp := regexp.MustCompile("[^0-9 ]")
@@ -86,10 +85,12 @@ func Part1() {
 		}
 	}
 
+	fmt.Print("D5P1: top letters are: ")
 	for i := 0; i < len(stacks); i++ {
 		value, _ := stacks[i].Pop()
 		fmt.Print(value)
 	}
+	fmt.Print("\n")
 }
 
 func Part2() {
@@ -135,7 +136,6 @@ func Part2() {
 					}
 				}
 			}
-			fmt.Println()
 			lineIndex++
 		} else if !part1 {
 			regexp := regexp.MustCompile("[^0-9 ]")
@@ -162,8 +162,10 @@ func Part2() {
 		}
 	}
 
+	fmt.Print("D5P2: top letters are: ")
 	for i := 0; i < len(stacks); i++ {
 		value, _ := stacks[i].Pop()
 		fmt.Print(value)
 	}
+	fmt.Print("\n")
 }

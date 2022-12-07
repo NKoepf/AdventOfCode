@@ -41,7 +41,7 @@ func Part1() {
 		}
 	}
 
-	fmt.Printf("There are %d sectors which are fully covered by the other elve", numberOfFullyContained)
+	fmt.Printf("D4P1: There are %d sectors which are fully covered by the other elve\n", numberOfFullyContained)
 }
 
 func Part2() {
@@ -64,7 +64,7 @@ func Part2() {
 		}
 	}
 
-	fmt.Printf("There are %d sectors which are partialy covered by the other elve", numberOfPartiallyContained)
+	fmt.Printf("D4P2: There are %d sectors which are partialy covered by the other elve\n", numberOfPartiallyContained)
 
 }
 

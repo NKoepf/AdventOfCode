@@ -13,8 +13,11 @@ import (
 
 func main() {
 
-	times := make([]time.Duration, 50)
-	for i := 0; i < 50; i++ {
+	var reps int = 50
+
+	times := make([]time.Duration, reps)
+
+	for i := 0; i < reps; i++ {
 
 		start := time.Now()
 		day1.Part1()
@@ -37,7 +40,7 @@ func main() {
 	for _, val := range times {
 		sumOfTimes += val.Milliseconds()
 	}
-	sumOfTimes = sumOfTimes / 50
+	sumOfTimes = sumOfTimes / int64(reps)
 
 	log.Printf("\n\n\nAverage time for all Days combined %d ms", sumOfTimes)
 }

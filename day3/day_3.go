@@ -57,7 +57,7 @@ func Part1() {
 		prioSum += calcPrioOfRune(match)
 
 	}
-	fmt.Printf("Sum of all prios: %d", prioSum)
+	fmt.Printf("D3P1: Sum of all prios: %d\n", prioSum)
 }
 
 func Part2() {
@@ -107,7 +107,7 @@ func Part2() {
 			prioSum += calcPrioOfRune(match)
 		}
 	}
-	fmt.Printf("Sum of all group prios: %d", prioSum)
+	fmt.Printf("D3P2: Sum of all group prios: %d\n", prioSum)
 
 }
 

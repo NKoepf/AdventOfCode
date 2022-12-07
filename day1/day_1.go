@@ -22,8 +22,6 @@ func main() {
 }
 
 func Part1() {
-	fmt.Println("Reading inputs of day 1:")
-
 	readFile, err := os.Open("day1/day_1.txt")
 	if err != nil {
 		fmt.Println(err)
@@ -44,7 +42,7 @@ func Part1() {
 		line := fileScanner.Text()
 
 		if line == "" {
-			fmt.Printf("Elve %d is done. Carried Calories is %d\n", elveIndex, caloriesPerElve)
+			//fmt.Printf("Elve %d is done. Carried Calories is %d\n", elveIndex, caloriesPerElve)
 			if caloriesPerElve > highScoreCals {
 				highScoreCals = caloriesPerElve
 				indexOfHighscore = elveIndex
@@ -64,12 +62,10 @@ func Part1() {
 
 	}
 
-	fmt.Printf("Highscore: %d from elve %d\n", highScoreCals, indexOfHighscore)
+	fmt.Printf("D1P1: Highscore: %d from elve %d\n", highScoreCals, indexOfHighscore)
 }
 
 func Part2() {
-	fmt.Println("Reading inputs of day 1:")
-
 	readFile, err := os.Open("day1/day_1.txt")
 	if err != nil {
 		fmt.Println(err)
@@ -87,10 +83,10 @@ func Part2() {
 		line := fileScanner.Text()
 
 		if line == "" {
-			fmt.Printf("Elve %d is done. Carried Calories is %d\n", elveIndex, caloriesPerElve)
+			//fmt.Printf("Elve %d is done. Carried Calories is %d\n", elveIndex, caloriesPerElve)
 
 			topThree = replaceLowest(topThree, caloriesPerElve)
-			fmt.Printf("Current top three vals %v\n", topThree)
+			//fmt.Printf("Current top three vals %v\n", topThree)
 
 			caloriesPerElve = 0
 			elveIndex++
@@ -105,7 +101,7 @@ func Part2() {
 	}
 
 	sumOfTopThree := topThree[0] + topThree[1] + topThree[2]
-	fmt.Printf("Combine vaue of the top three %d\n", sumOfTopThree)
+	fmt.Printf("D1P2: Combine vaue of the top three %d\n", sumOfTopThree)
 
 }
 
