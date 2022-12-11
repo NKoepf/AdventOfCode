@@ -8,6 +8,7 @@ import (
 	"AdventOfCode_2022/day5"
 	"AdventOfCode_2022/day6"
 	"AdventOfCode_2022/day7"
+	"AdventOfCode_2022/day8"
 	"log"
 	"time"
 )
@@ -34,6 +35,7 @@ func main() {
 		day6.Part1()
 		day6.Part2()
 		day7.Start()
+		day8.RunBoth()
 		elapsed := time.Since(start)
 
 		times[i] = elapsed
