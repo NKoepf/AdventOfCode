@@ -1,4 +1,4 @@
-package main
+package day9
 
 import (
 	"bufio"
@@ -50,7 +50,7 @@ func Part1() {
 	for fileScanner.Scan() {
 		moveByLine(fileScanner.Text())
 	}
-	fmt.Printf("D9P1: There were %d distinct fields visited by the tail", len(visitedSet))
+	fmt.Printf("D9P1: There were %d distinct fields visited by the tail\n", len(visitedSet))
 }
 
 func Part2() {
@@ -97,8 +97,7 @@ func Part2() {
 
 		}
 	}
-	// 72
-	fmt.Printf("D9P2: There were %d distinct fields visited by the long tail", len(visitedSet))
+	fmt.Printf("D9P2: There were %d distinct fields visited by the long tail\n", len(visitedSet))
 
 }
 
