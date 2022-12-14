@@ -2,7 +2,7 @@ package main
 
 import (
 	"AdventOfCode_2022/day1"
-	"AdventOfCode_2022/day10"
+	"AdventOfCode_2022/day11"
 	"AdventOfCode_2022/day2"
 	"AdventOfCode_2022/day3"
 	"AdventOfCode_2022/day4"
@@ -39,7 +39,8 @@ func main() {
 		day7.Start()
 		day8.RunBoth()
 		day9.RunBoth()
-		day10.Start()
+		//day10.Start()
+		day11.Start()
 		elapsed := time.Since(start)
 
 		times[i] = elapsed
