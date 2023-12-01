@@ -160,10 +160,6 @@ fun replaceWrittenDigits(line: String): String {
 
 fun getNumberOfString(input: String): Int {
     val onlyDigits = input.replace(Regex("[^0-9]"), "")
-    //println(onlyDigits)
-    val s = "${onlyDigits[0]}${onlyDigits[onlyDigits.length - 1]}"
-    //println(s)
-    val v = s.toInt()
-    //println(v)
-    return v
+    val digits = "${onlyDigits[0]}${onlyDigits[onlyDigits.length - 1]}".toInt()
+    return digits
 }
