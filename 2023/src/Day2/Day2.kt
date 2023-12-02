@@ -3,7 +3,7 @@ package Day2
 import java.io.File
 import kotlin.math.max
 
-fun main(){
+fun main() {
     val file = File("2023/src/Day2/testInput.txt")
     var sum = 0
     var power = 0
@@ -24,7 +24,7 @@ fun main(){
         println("Draws: $dices")
         println("Max per color: ${diceMap}\n")
         power += (diceMap["red"]!! * diceMap["green"]!! * diceMap["blue"]!!)
-        if(diceMap["red"]!! <= 12 && diceMap["green"]!! <= 13 && diceMap["blue"]!! <= 14) sum += gameId
+        if (diceMap["red"]!! <= 12 && diceMap["green"]!! <= 13 && diceMap["blue"]!! <= 14) sum += gameId
     }
 
     println("Sum of all working round indices is $sum")
