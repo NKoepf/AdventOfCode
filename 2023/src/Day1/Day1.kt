@@ -3,11 +3,13 @@ package Day1
 import java.io.File
 
 fun main() {
-    part2()
-
+    val sol1 = part1()
+    val sol2 = part2()
+    println("Part1: The total sum of calibration is ${sol1}")
+    println("Part2: The total sum of calibration is ${sol2}")
 }
 
-fun part1() {
+fun part1(): Int {
     val input = File("2023/src/Day1/input.txt")
 
     var sum = 0
@@ -16,11 +18,10 @@ fun part1() {
         println(lineVal)
         sum += lineVal
     }
-
-    println("The total sum of calibration is $sum")
+    return sum
 }
 
-fun part2() {
+fun part2(): Int {
     val input = File("2023/src/Day1/Input.txt")
 
     var sum = 0
@@ -30,8 +31,7 @@ fun part2() {
         println(lineVal)
         sum += lineVal
     }
-
-    println("The total sum of calibration is $sum")
+    return sum
 }
 
 fun replaceWrittenDigits(line: String): String {
