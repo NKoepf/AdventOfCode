@@ -32,7 +32,7 @@ fun main() {
         pointsOverall += pointOfCard
 
         for (instance in 1..scratchCards[gameIndex]) {
-            for (i in 0..numberOfWins - 1) {
+            for (i in 0..<numberOfWins) {
                 scratchCards[gameIndex + 1 + i]++
             }
         }
