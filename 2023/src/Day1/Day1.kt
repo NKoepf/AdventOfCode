@@ -11,6 +11,7 @@ fun main() {
 
 fun part1(): Int {
     val input = File("2023/src/Day1/input.txt")
+    Util.printPart1()
 
     var sum = 0
     input.forEachLine {
@@ -23,6 +24,7 @@ fun part1(): Int {
 
 fun part2(): Int {
     val input = File("2023/src/Day1/Input.txt")
+    Util.printPart2()
 
     var sum = 0
     input.forEachLine {

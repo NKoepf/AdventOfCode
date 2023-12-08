@@ -3,6 +3,7 @@ package Day4
 import java.io.File
 
 fun main() {
+    Util.printPart2()
     val file = File("2023/src/Day4/Input.txt")
     var pointsOverall = 0
     var scratchCards = IntArray(213) { 1 }

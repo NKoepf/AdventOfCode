@@ -5,6 +5,7 @@ import kotlin.math.max
 
 fun main() {
     val file = File("2023/src/Day2/testInput.txt")
+    Util.printPart2()
     var sum = 0
     var power = 0
 

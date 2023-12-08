@@ -34,10 +34,12 @@ val cardValue2 = mapOf(
 )
 
 fun main() {
+    part1()
     part2()
 }
 
 fun part1() {
+    Util.printPart1()
     val hands: MutableList<Pair<String, Int>> = mutableListOf()
     File("2023/src/Day7/input.txt").forEachLine {
         val parts = it.split(" ")
@@ -83,6 +85,7 @@ fun part1() {
 }
 
 fun part2() {
+    Util.printPart2()
     val hands: MutableList<Pair<String, Int>> = mutableListOf()
     File("2023/src/Day7/input.txt").forEachLine {
         val parts = it.split(" ")

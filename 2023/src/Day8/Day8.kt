@@ -3,10 +3,12 @@ package Day8
 import java.io.File
 
 fun main() {
+    part1()
     part2()
 }
 
 fun part1() {
+    Util.printPart1()
     var lines = File("2023/src/Day8/input.txt").readLines()
     val instructions = lines[0].replace("L", "0").replace("R", "1").map { s -> s.toString().toInt() }
 
@@ -46,6 +48,7 @@ fun part1() {
 }
 
 fun part2() {
+    Util.printPart2()
     var lines = File("2023/src/Day8/input.txt").readLines()
     val instructions = lines[0].map { s -> s.toString() }
 

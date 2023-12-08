@@ -4,18 +4,11 @@ import java.io.File
 
 fun main() {
     part1()
-    println()
     part2()
 }
 
 fun part1() {
-    println(
-        """
-        ########################################
-        ##########       PART1:       ##########
-        ########################################
-    """.trimIndent()
-    )
+    Util.printPart1()
     val inputs = mutableListOf<List<Long>>()
     File("2023/src/Day6/input.txt").forEachLine { line ->
         inputs.add(line.split(":[ ]{1,}".toRegex())[1].split("[ ]{1,}".toRegex()).map { s -> s.toLong() }.toList())
@@ -38,13 +31,7 @@ fun part1() {
 }
 
 fun part2() {
-    println(
-        """
-        ########################################
-        ##########       PART2:       ##########
-        ########################################
-    """.trimIndent()
-    )
+    Util.printPart2()
     val lines = File("2023/src/Day6/input.txt").readLines()
     val distanceToBeat = lines[1].substringAfter(":").replace(" ", "").toLong()
     val timeLimit = lines[0].substringAfter(":").replace(" ", "").toLong()

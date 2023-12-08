@@ -5,10 +5,12 @@ import Util.printField
 import java.io.File
 
 fun main() {
+    part1()
     part2()
 }
 
 fun part2() {
+    Util.printPart2()
     val file = File("2023/src/Day3/input.txt")
     val field: MutableList<MutableList<Char>> = generate2DCharField(file)
     printField(field)
@@ -55,6 +57,7 @@ fun part2() {
 }
 
 fun part1() {
+    Util.printPart1()
     val file = File("2023/src/Day3/input.txt")
     val field: MutableList<MutableList<Char>> = generate2DCharField(file)
     printField(field)
