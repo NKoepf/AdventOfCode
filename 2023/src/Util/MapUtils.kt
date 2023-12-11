@@ -22,6 +22,12 @@ fun printField(field: MutableList<MutableList<Char>>) {
     }
 }
 
+fun printStringField(field: MutableList<MutableList<String>>) {
+    field.forEach { line ->
+        println(line)
+    }
+}
+
 fun printIntField(field: MutableList<MutableList<Int>>) {
     field.forEach { line ->
         println(line)
