@@ -1,5 +1,6 @@
 package Day13
 
+import Util.Field
 import java.io.File
 
 var verticalSum = 0
@@ -19,8 +20,7 @@ fun part1(file: File) {
     horizontalSum = 0
 
     parts.forEach { part ->
-        val field = genField(part)
-//        println(field)
+        val field = Util.genField(part)
         findReflections(field, 0)
     }
     println("there are $horizontalSum horizontal reflections and $verticalSum vertical reflections. Sum ${verticalSum + 100 * horizontalSum}")
@@ -32,7 +32,7 @@ fun part2(file: File) {
     horizontalSum = 0
 
     parts.forEach { part ->
-        val field = genField(part)
+        val field = Util.genField(part)
         val hoRef = findReflection(field.rows, 0).first
         val veRef = findReflection(field.cols, 0).first
         findSmudgedReflections(field, 1, if (hoRef != null) hoRef else -1, if (veRef != null) veRef else -1)
@@ -40,18 +40,6 @@ fun part2(file: File) {
     println("After tolerating one smudge, there are $horizontalSum horizontal reflections and $verticalSum vertical reflections. Sum ${verticalSum + 100 * horizontalSum}")
 }
 
-fun genField(field: String): Field {
-    val rows = field.split("\n")
-    val cols: MutableList<String> = mutableListOf()
-    for (i in 0..<rows[0].length) {
-        var col = ""
-        for (element in rows) {
-            col += element[i]
-        }
-        cols.add(col)
-    }
-    return Field(rows, cols)
-}
 
 fun findReflections(field: Field, tolerance: Int) {
     val hoRef = findReflection(field.rows, tolerance)
@@ -123,8 +111,3 @@ fun getDiffCount(line1: String, line2: String): Int {
     }
     return diff
 }
-
-data class Field(
-    var rows: List<String>,
-    var cols: List<String>
-)

@@ -39,3 +39,41 @@ fun printLongField(field: MutableList<MutableList<Long>>) {
         println(line)
     }
 }
+
+fun <T> printLists(lines: List<T>) {
+    lines.forEach {
+        println(it.toString())
+    }
+    println()
+}
+
+fun transpose(strings: List<String>): List<String> {
+    val transposed = mutableListOf<String>()
+    for (i in 0..<strings[0].length) {
+        var newLine = ""
+        for (j in strings.indices) {
+            newLine = newLine.plus(strings[j][i])
+        }
+        transposed.add(newLine)
+    }
+    return transposed
+}
+
+fun genField(field: String): Field {
+    val rows = field.split("\n")
+    val cols: MutableList<String> = mutableListOf()
+    for (i in 0..<rows[0].length) {
+        var col = ""
+        for (element in rows) {
+            col += element[i]
+        }
+        cols.add(col)
+    }
+    return Field(rows, cols)
+}
+
+
+data class Field(
+    var rows: List<String>,
+    var cols: List<String>
+)
