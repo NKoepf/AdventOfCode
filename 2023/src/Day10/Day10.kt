@@ -103,19 +103,19 @@ fun move(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
     }
 }
 
-fun moveDown(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
+private fun moveDown(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
     return Tile(field[currentTile.yPos + 1][currentTile.xPos], currentTile.xPos, currentTile.yPos + 1)
 }
 
-fun moveUp(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
+private fun moveUp(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
     return Tile(field[currentTile.yPos - 1][currentTile.xPos], currentTile.xPos, currentTile.yPos - 1)
 }
 
-fun moveRight(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
+private fun moveRight(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
     return Tile(field[currentTile.yPos][currentTile.xPos + 1], currentTile.xPos + 1, currentTile.yPos)
 }
 
-fun moveLeft(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
+private fun moveLeft(field: MutableList<MutableList<Char>>, currentTile: Tile): Tile {
     return Tile(field[currentTile.yPos][currentTile.xPos - 1], currentTile.xPos - 1, currentTile.yPos)
 }
 

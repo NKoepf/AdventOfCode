@@ -85,7 +85,7 @@ fun tiltField(lines: List<String>, left: Boolean): List<String> {
     return shifted
 }
 
-fun moveLeft(line: String): String {
+private fun moveLeft(line: String): String {
     val parts = line.split("#")
     val sortedLine = mutableListOf<String>()
     parts.forEachIndexed { i, part ->
@@ -98,7 +98,7 @@ fun moveLeft(line: String): String {
     return sortedLine.joinToString().replace(", ", "")
 }
 
-fun moveRight(line: String): String {
+private fun moveRight(line: String): String {
     val parts = line.split("#")
     val sortedLine = mutableListOf<String>()
     parts.forEachIndexed { i, part ->
