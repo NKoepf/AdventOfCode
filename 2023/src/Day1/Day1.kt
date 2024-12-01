@@ -1,4 +1,3 @@
-package Day1
 
 import java.io.File
 
