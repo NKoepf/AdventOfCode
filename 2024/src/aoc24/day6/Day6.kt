@@ -1,6 +1,10 @@
 package aoc24.day6
 
 import Util.generate2DCharFieldWithStartPos
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.runBlocking
 import java.io.File
 import kotlin.system.measureTimeMillis
 
@@ -16,18 +20,26 @@ fun main() {
     }
     println("Part1: There were ${visited.size} positions visited by the guard [$t1 ms]")
 
+
     var loopsFound = 0
     val t2 = measureTimeMillis {
-
-
-        visited.drop(1).forEach {
-            if (moveGuardWithExtraObstacleIsLoop(generate2DCharFieldWithStartPos(input, '^').second, res.first, it)) {
-                loopsFound++
+        runBlocking {
+            val jobs = visited.drop(1).map {
+                async(Dispatchers.Default) {
+                    if (moveGuardWithExtraObstacleIsLoop(
+                            generate2DCharFieldWithStartPos(input, '^').second,
+                            res.first,
+                            it
+                        )
+                    ) {
+                        loopsFound++
+                    }
+                }
             }
+            jobs.awaitAll()
         }
     }
     println("Part2: found $loopsFound loops [$t2 ms]")
-
 }
 
 
