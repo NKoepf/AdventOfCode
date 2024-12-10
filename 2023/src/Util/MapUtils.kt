@@ -16,6 +16,20 @@ fun generate2DCharField(file: File): MutableList<MutableList<Char>> {
     return field
 }
 
+fun generate2DIntField(file: File): MutableList<MutableList<Int>> {
+    val field: MutableList<MutableList<Int>> = mutableListOf()
+    var lineIndex = 0
+
+    file.forEachLine { line ->
+        field.add(mutableListOf())
+        line.forEach { char ->
+            field[lineIndex].add(char.digitToInt())
+        }
+        lineIndex++
+    }
+    return field
+}
+
 fun generate2DCharFieldWithStartPos(file: File, startChar: Char): Pair<Pair<Int, Int>, MutableList<MutableList<Char>>> {
     val field: MutableList<MutableList<Char>> = mutableListOf()
     var lineIndex = 0
