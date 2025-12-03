@@ -3,83 +3,32 @@ package Day03
 import java.io.File
 
 fun main() {
-//    Day03.run()
-    Day03.run2()
+    println("Part 1: Solution: ${Day03.run(2)}")
+    println("Part 2: Solution: ${Day03.run(12)}")
 }
 
 class Day03 {
     companion object {
-        fun run2(){
-            val banks = File("2025/src/Day03/testinput.txt").readLines()
-            banks.forEach { bank ->
-                val numbers: List<Int> = bank.map { it.toString().toInt() }
-                // find highest number
-                val highest = numbers.sorted().distinct().reversed().take(2)
-                val indexOfHigher = numbers.indexOfFirst { it == highest.max() }
-
-                var indexOfLower = -1
-                if (indexOfHigher == numbers.lastIndex) {
-                    // if highest is at the end, find first occurrence of lower
-                    indexOfLower = numbers.indexOfFirst { it == highest.min() }
-                } else {
-                    // else look only after the higher index
-                    val remainders = numbers.drop(indexOfHigher+1)
-                    indexOfLower = remainders.indexOfFirst { it == remainders.max() } + indexOfHigher + 1
+        fun run(n: Int): Long {
+            return File("2025/src/Day03/testinput.txt").useLines { lines ->
+                lines.sumOf { batteryPack ->
+                    getHighestJoltage(batteryPack, n)
                 }
-
-                val higherValue = bank[indexOfHigher]
-                val lowerValue = bank[indexOfLower]
-
-                var result = 0
-                if (indexOfHigher < indexOfLower) {
-//                    println("$indexOfHigher, $indexOfLower")
-                    result = (higherValue.toString() + lowerValue.toString()).toInt()
-                } else {
-//                    println("$indexOfLower, $indexOfHigher")
-                    result = (lowerValue.toString() + higherValue.toString()).toInt()
-                }
-//                println(result)
-
             }
-
         }
 
-        fun run() {
-            val banks = File("2025/src/Day03/input.txt").readLines()
-            var totalOfBanks = 0L
-
-            banks.forEach { bank ->
-                val numbers: List<Int> = bank.map { it.toString().toInt() }
-                // find highest number
-                val highest = numbers.sorted().distinct().reversed().take(2)
-                val indexOfHigher = numbers.indexOfFirst { it == highest.max() }
-
-                var indexOfLower = -1
-                if (indexOfHigher == numbers.lastIndex) {
-                    // if highest is at the end, find first occurrence of lower
-                    indexOfLower = numbers.indexOfFirst { it == highest.min() }
-                } else {
-                    // else look only after the higher index
-                    val remainders = numbers.drop(indexOfHigher+1)
-                    indexOfLower = remainders.indexOfFirst { it == remainders.max() } + indexOfHigher + 1
-                }
-
-                val higherValue = bank[indexOfHigher]
-                val lowerValue = bank[indexOfLower]
-
-                var result = 0
-                if (indexOfHigher < indexOfLower) {
-//                    println("$indexOfHigher, $indexOfLower")
-                    result = (higherValue.toString() + lowerValue.toString()).toInt()
-                } else {
-//                    println("$indexOfLower, $indexOfHigher")
-                    result = (lowerValue.toString() + higherValue.toString()).toInt()
-                }
-//                println(result)
-                totalOfBanks += result
+        fun getHighestJoltage(batteryPack: String, n: Int): Long {
+            val ans = StringBuilder()
+            var l = 0
+            var r = batteryPack.length - n + 1
+            repeat(n) {
+                val window = batteryPack.substring(l, r)
+                val maxIdx: Int = window.indices.maxBy { window[it].code }
+                ans.append(window[maxIdx])
+                l += maxIdx + 1
+                r++
             }
-
-            println("Total: $totalOfBanks")
+            return ans.toString().toLong()
         }
     }
 }
